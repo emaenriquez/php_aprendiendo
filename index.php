@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <form action="pagina2.php" method="post">
-        ingrese valor:
-        <input type="text" name="valor1">
-        <br>
-        ingrese segundo valor:
-        <input type="text" name="valor2">
-        <br>
-        <input type="checkbox" name="check1">sumar
-        <br>
-        <input type="checkbox" name="check2">restar
-        <br>
-        <input type="submit" name="operar">
-    </form>
+    <?php 
+    
+    // function mostrarTitulo($men){
+    //     echo "<h1 style=\"text-align:center\">";
+    //     echo $men;
+    //     echo "</h1>";
+    // }
+
+    // mostrarTitulo('Hola mundo');
+    // echo '<br>';
+    // mostrarTitulo('Hola')
+
+    function calcularPromedio($valor1,$valor2){
+        $pro = $valor1 / $valor2;
+        return $pro;
+    }
+
+    $v1 = 100;
+    $v2 = 50;
+
+    $p = calcularPromedio($v1,$v2);
+
+    echo $p;
+
+    ?>
 </body>
 </html>
