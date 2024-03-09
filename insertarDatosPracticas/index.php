@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="pagina.php">
-        email para borrar en la base de datos:
-        <input type="text" name="mail">
+    <form method="post" action="datos.php">
+        ingrese nombre del curso:
+        <input type="text" name="nombre">
         <br>
-        <input type="submit" value="buscar y borrar">
+        <input type="submit" value="confirmar">
     </form>
 </body>
 </html>
