@@ -643,3 +643,89 @@ pagina3.php
         mysqli_close($conexion);
     ?>
 ```
+
+# Parámetros en un hipervínculo.
+index.php
+```php
+    <?php 
+    
+    // $nombre = "Carlos";
+    // $edad = 32;
+
+    // echo '<a href="pagina2.php?nombre=' . $nombre . '&edad=' . $edad . '">ir a pagina del destino</a>';
+
+    echo '<a href="pagina2.php?tabla=2">tabla de multiplicar 2</a>';
+
+    echo '<a href="pagina2.php?tabla=3">tabla de multiplicar 3</a>';
+
+    echo '<a href="pagina2.php?tabla=5">tabla de multiplicar 5</a>';
+
+    ?>
+```
+pagina2.php
+```php
+    <?php 
+
+        // $nombre = $_GET['nombre'];
+        // $edad = $_GET['edad'];
+
+        $numTabla = $_GET['tabla'];
+
+        // echo "hola $nombre tu edad es $edad";
+
+        for ($i=1; $i < 11; $i++) { 
+            
+            $valor = $i * $numTabla;
+
+            echo "$valor <br>";
+        }
+    ?>
+```
+# diferencias entre $_Request y $_Get
+
+$_GET: Esta superglobal se utiliza para recoger datos enviados a través de la URL utilizando el método GET. Cuando se hace clic en un enlace o se envía un formulario con el método GET, los datos se adjuntan a la URL y están disponibles en el array $_GET. 
+$_REQUEST: Esta superglobal recoge datos tanto de la URL (a través de GET) como de los datos enviados a través de formularios (a través de POST), así como de las cookies. es más amplio en términos de los tipos de datos que puede recoger, ya que puede recoger datos de múltiples fuentes. Sin embargo, debido a esta amplitud, el uso de $_REQUEST puede ser menos seguro en ciertos casos, ya que cualquier script externo puede enviar datos a través de un formulario POST y afectar al script que recibe esos datos.
+
+
+# parametros en un hipervinculo
+index.php
+```php
+<?php 
+    
+    // $nombre = "Carlos";
+    // $edad = 32;
+
+    // echo '<a href="pagina2.php?nombre=' . $nombre . '&edad=' . $edad . '">ir a pagina del destino</a>';
+
+    echo '<a href="pagina2.php?tabla=2">tabla de multiplicar 2</a>';
+
+    echo '<a href="pagina2.php?tabla=3">tabla de multiplicar 3</a>';
+
+    echo '<a href="pagina2.php?tabla=5">tabla de multiplicar 5</a>';
+
+    ?>
+</body>
+```
+pagina2.php
+```php
+    <?php 
+
+        // $nombre = $_GET['nombre'];
+        // $edad = $_GET['edad'];
+
+        $numTabla = $_GET['tabla'];
+
+        // echo "hola $nombre tu edad es $edad";
+
+        for ($i=1; $i < 11; $i++) { 
+            
+            $valor = $i * $numTabla;
+
+            echo "$valor <br>";
+
+        }
+
+    ?>
+```
+
+# php es gradual (var_dump & gettype)
